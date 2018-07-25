@@ -28,7 +28,7 @@
 </template>
 
 <script>
-    import * as apitax from 'apitax'
+    import * as apitax from '@apitax/api-client'
     export default {
         data: function () {
             return {

@@ -209,7 +209,7 @@
 
 
 <script>
-    import * as apitax from 'apitax'
+    import * as apitax from '@apitax/api-client'
 
     function capitalizeFirstLetter(string) {
         return string.charAt(0).toUpperCase() + string.slice(1);
