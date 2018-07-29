@@ -22,16 +22,25 @@ import solid from '@fortawesome/fontawesome-free-solid'
 import regular from '@fortawesome/fontawesome-free-regular'
 import brands from '@fortawesome/fontawesome-free-brands'
 
-fontawesome.library.add(solid)
-fontawesome.library.add(regular)
-fontawesome.library.add(brands)
+fontawesome.library.add(solid);
+fontawesome.library.add(regular);
+fontawesome.library.add(brands);
 
 // Custom CSS
 import '../../src/css/main.css'
 
 // Vue Confirmation
 import VuejsDialog from "vuejs-dialog"
-Vue.use(VuejsDialog)
+
+Vue.use(VuejsDialog);
+
+// Setting up Apitax API Client
+import {setBaseUrl} from '@apitax/api-client';
+
+let config = require('config');
+setBaseUrl(config.endpoints.core);
+
+//setBaseUrl(config.endpoints.core);
 
 // Persist Vuex Store
 import createPersistedState from 'vuex-persistedstate'
@@ -71,7 +80,7 @@ export var router = new VueRouter({
 // Vuex Router Sync - Provides a route module in the store
 import {sync} from 'vuex-router-sync'
 
-const unsync = sync(store, router)
+const unsync = sync(store, router);
 
 // Creating the Application
 const app = new Vue({

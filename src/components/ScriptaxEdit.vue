@@ -114,7 +114,7 @@
 
 
 <script>
-		import * as apitax from '@apitax/api-client'
+    import * as apitax from '@apitax/api-client'
 
     export default {
         data: function () {
@@ -245,14 +245,15 @@
                     }
 
                 }, {
-                    'command': {'command': command, 'parameters': params, 'options': {
-                        		'debug': true,
-                        		'sensitive': false,
-                    		},
+                    'command': {
+                        'command': command, 'parameters': params, 'options': {
+                            'debug': true,
+                            'sensitive': false,
+                        },
                     },
-										'auth': {
-												'api_token': apitax.getApiToken(),
-										},
+                    'auth': {
+                        'api_token': apitax.getApiToken(),
+                    },
                 }, null);
             },
 

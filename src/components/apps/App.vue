@@ -20,7 +20,7 @@
                             <a class="nav-link" @click="gotoLogin()" v-if="!auth">Login</a>
                         </li>
                         <li class="nav-item">
-                            <router-link class="nav-link" to="/dashboard" v-if="auth">Dashboard</router-link>
+                            <router-link class="nav-link" to="/dev" v-if="auth">Dashboard</router-link>
                         </li>
                         <li class="nav-item">
                             <a class="nav-link" v-if="auth" @click="logout()">Logout</a>
@@ -222,10 +222,10 @@
 
         methods: {
             logout() {
-                apitax.logout('/apitax/2/login');
+                apitax.logout('/');
             },
             gotoLogin() {
-            	window.location.href = '/apitax/2/login';
+            	window.location.href = '/';
             },
         },
         created() {

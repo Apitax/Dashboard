@@ -44,7 +44,7 @@
 					login() {
 						apitax.login(this.credentials.username, this.credentials.password, this, function(context, response) {
 							context.response = response;
-						}, '/apitax/2/dashboard');
+						}, '/dev/');
 						
 					   /*axios.post(`/apitax/2/auth`, {
             			"username": this.credentials.username,

@@ -26,9 +26,9 @@ import solid from '@fortawesome/fontawesome-free-solid'
 import regular from '@fortawesome/fontawesome-free-regular'
 import brands from '@fortawesome/fontawesome-free-brands'
 
-fontawesome.library.add(solid)
-fontawesome.library.add(regular)
-fontawesome.library.add(brands)
+fontawesome.library.add(solid);
+fontawesome.library.add(regular);
+fontawesome.library.add(brands);
 
 // Custom CSS
 import '../../src/css/main.css'
@@ -36,12 +36,12 @@ import '../../src/css/main.css'
 // Vue Confirmation
 import VuejsDialog from "vuejs-dialog"
 
-Vue.use(VuejsDialog)
+Vue.use(VuejsDialog);
 
 // JSON Tree View
 import TreeView from "vue-json-tree-view"
 
-Vue.use(TreeView)
+Vue.use(TreeView);
 import '../../src/css/vue-json-tree-view.css'
 
 // Code Mirror
@@ -54,13 +54,19 @@ Vue.use(VueCodemirror, {
     options: {theme: 'Paraiso-Light', autoRefresh: true},
 })
 
+// Setting up Apitax API Client
+import {setBaseUrl} from '@apitax/api-client';
+
+let config = require('config');
+setBaseUrl(config.endpoints.core);
+
 // Persist Vuex Store
 import createPersistedState from 'vuex-persistedstate'
 
 // Vuex Store
 import Vuex from 'vuex'
 
-Vue.use(Vuex)
+Vue.use(Vuex);
 const store = new Vuex.Store({
     state: {
         scriptax: {
@@ -96,12 +102,13 @@ export var router = new VueRouter({
 // Vuex Router Sync - Provides a route module in the store
 import {sync} from 'vuex-router-sync'
 
-const unsync = sync(store, router)
+const unsync = sync(store, router);
 
 // Vue-axios
 import axios from 'axios'
 import VueAxios from 'vue-axios'
-Vue.use(VueAxios, axios)
+
+Vue.use(VueAxios, axios);
 
 // Creating the Application
 const app = new Vue({
